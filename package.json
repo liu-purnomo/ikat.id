@@ -19,6 +19,7 @@
     "multer": "^2.0.1",
     "node-cron": "^4.1.0",
     "pg": "^8.16.0",
+    "qrcode": "^1.5.4",
     "sequelize": "^6.37.7"
   },
   "devDependencies": {
