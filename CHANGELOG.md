@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.0.3] - 2025-06-04
+
+### Added
+- `.sequelizerc` file is now tracked by Git to ensure Sequelize CLI works with the custom folder structure.
+- Added `db:reset` script: drops, creates, and runs all migrations with a single command.
+- Ignored `uploads/` in `nodemon` to prevent unnecessary restarts during development.
+
+### Fixed
+- Automatically create `uploads/` folder if missing to prevent multer-related server errors.
+
+### Changed
+- Bumped project version to `1.0.3` in `package.json`.
+
+
 ## [1.0.1] - 2025-06-04
 
 ### Fixed

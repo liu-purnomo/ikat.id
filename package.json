@@ -4,7 +4,9 @@
   "main": "src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/app.js --ignore uploads/"
+    "dev": "nodemon src/app.js --ignore uploads/",
+    "db:reset": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate",
+    "start": "node src/app.js"
   },
   "keywords": [],
   "author": "",

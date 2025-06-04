@@ -27,9 +27,6 @@ build/
 # Uploaded files
 uploads/
 
-# Sequelize CLI file (optional)
-.sequelizerc
-
 # VSCode or editor settings
 .vscode/
 .idea/
