@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.0.1] - 2025-06-04
+
+### Fixed
+- Ensure `uploads/` folder is automatically created before `multer` stores any file.
+  - Prevents server crash when the folder doesn't exist.
+  - Uses `fs.existsSync` and `fs.mkdirSync(..., { recursive: true })` before multer storage initialization.
+
+### Changed
+- Refactored multer destination setup to use centralized `uploadDir` constant.
+
+
 ## [1.0.0] - 2025-06-04
 
 ### Added
