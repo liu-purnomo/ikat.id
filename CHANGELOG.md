@@ -7,6 +7,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [2.0.0] - 2025-06-04
+
+# ✨ What's new in v2.0.0
+
+## Added
+- 🌀 Loading indicator when uploading a file to give users clear visual feedback during the upload process.
+- ⛔ "Send File" button is now disabled immediately upon submission to prevent multiple clicks.
+- 📢 Display message "Uploading file, please wait..." during upload for improved clarity.
+
+## Changed
+- Updated upload form layout to include a loading spinner and manage submit button state dynamically.
+
+## Why it matters
+- Significantly improves user experience (UX), especially when uploading large files or using slower internet connections.
+- Prevents duplicate submissions and provides clear communication during the upload process.
+
+---
+
+ℹ️ Note:
+This version only includes frontend enhancements. No changes were made to backend logic or database structure.
+
+## [1.1.0] - 2025-06-04
+
+Version 1.1.0 – English UI Latest
+
+✨ What's new in v1.1.0
+
+🌐 Full English translation for all public-facing pages
+✅ Improved copy-to-clipboard feedback
+🎯 Minor layout and content adjustments
+
+
 ## [1.0.3] - 2025-06-04
 
 ### Added

@@ -16,7 +16,6 @@
           <a href="/" class="text-light text-decoration-none">
             <h1 class="fw-bold mb-2">Ikat Digital</h1>
           </a>
-
           <p class="text-secondary">
             Send files without login — automatically deleted after download
           </p>
@@ -29,6 +28,7 @@
             <div class="card-body p-4">
               <h4 class="text-center mb-4">Upload File</h4>
               <form
+                id="uploadForm"
                 action="/upload"
                 method="POST"
                 enctype="multipart/form-data"
@@ -53,16 +53,6 @@
                     placeholder="Write a message if needed..."
                   ></textarea>
                 </div>
-
-                <!-- <div class="mb-3">
-                  <label class="form-label">Recipient Email (optional)</label>
-                  <input
-                    type="email"
-                    name="recipientEmail"
-                    class="form-control bg-dark text-light border-secondary"
-                    placeholder="name@email.com"
-                  />
-                </div> -->
 
                 <div class="mb-3">
                   <label class="form-label">File Expiry Time</label>
@@ -109,9 +99,25 @@
                   </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary w-100">
+                <button
+                  id="submitBtn"
+                  type="submit"
+                  class="btn btn-primary w-100"
+                >
                   Send File
                 </button>
+
+                <!-- Loading Spinner -->
+                <div
+                  id="loading"
+                  class="text-center mt-3"
+                  style="display: none"
+                >
+                  <div class="spinner-border text-light" role="status"></div>
+                  <p class="mt-2 text-secondary">
+                    Uploading file, please wait...
+                  </p>
+                </div>
               </form>
             </div>
           </div>
@@ -122,14 +128,24 @@
         </div>
       </div>
     </div>
-  </body>
-  <script>
-    function validateSize(input) {
-      const file = input.files[0];
-      if (file && file.size > 50 * 1024 * 1024 * 1024) {
-        alert('The selected file exceeds the 50GB limit.');
-        input.value = '';
+
+    <script>
+      function validateSize(input) {
+        const file = input.files[0];
+        if (file && file.size > 50 * 1024 * 1024 * 1024) {
+          alert('The selected file exceeds the 50GB limit.');
+          input.value = '';
+        }
       }
-    }
-  </script>
+
+      const form = document.getElementById('uploadForm');
+      const loading = document.getElementById('loading');
+      const submitBtn = document.getElementById('submitBtn');
+
+      form.addEventListener('submit', () => {
+        loading.style.display = 'block';
+        submitBtn.disabled = true;
+      });
+    </script>
+  </body>
 </html>
