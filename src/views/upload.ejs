@@ -18,7 +18,7 @@
           </a>
 
           <p class="text-secondary">
-            Kirim file tanpa login — akan terhapus otomatis
+            Send files without login — automatically deleted after download
           </p>
         </div>
       </div>
@@ -34,7 +34,7 @@
                 enctype="multipart/form-data"
               >
                 <div class="mb-3">
-                  <label class="form-label">Pilih File</label>
+                  <label class="form-label">Choose File</label>
                   <input
                     type="file"
                     name="file"
@@ -45,42 +45,42 @@
                 </div>
 
                 <div class="mb-3">
-                  <label class="form-label">Catatan (opsional)</label>
+                  <label class="form-label">Note (optional)</label>
                   <textarea
                     name="note"
                     class="form-control bg-dark text-light border-secondary"
                     rows="2"
-                    placeholder="Tuliskan pesan jika ada..."
+                    placeholder="Write a message if needed..."
                   ></textarea>
                 </div>
 
                 <!-- <div class="mb-3">
-                  <label class="form-label">Email Penerima (opsional)</label>
+                  <label class="form-label">Recipient Email (optional)</label>
                   <input
                     type="email"
                     name="recipientEmail"
                     class="form-control bg-dark text-light border-secondary"
-                    placeholder="nama@email.com"
+                    placeholder="name@email.com"
                   />
                 </div> -->
 
                 <div class="mb-3">
-                  <label class="form-label">Batas Waktu File</label>
+                  <label class="form-label">File Expiry Time</label>
                   <select
                     name="expiresIn"
                     class="form-select bg-dark text-light border-secondary"
                   >
-                    <option value="30m">30 Menit</option>
-                    <option value="1h">1 Jam</option>
-                    <option value="1d" selected>1 Hari</option>
-                    <option value="7d">7 Hari</option>
-                    <option value="30d">30 Hari</option>
+                    <option value="30m">30 Minutes</option>
+                    <option value="1h">1 Hour</option>
+                    <option value="1d" selected>1 Day</option>
+                    <option value="7d">7 Days</option>
+                    <option value="30d">30 Days</option>
                   </select>
                 </div>
 
                 <div class="mb-4">
                   <label class="form-label"
-                    >Hapus setelah sekali download?</label
+                    >Delete after a single download?</label
                   >
                   <div class="form-check">
                     <input
@@ -91,9 +91,9 @@
                       id="onceYes"
                       checked
                     />
-                    <label class="form-check-label" for="onceYes"
-                      >Ya, hapus setelah sekali diunduh</label
-                    >
+                    <label class="form-check-label" for="onceYes">
+                      Yes, delete after a single download
+                    </label>
                   </div>
                   <div class="form-check">
                     <input
@@ -103,20 +103,21 @@
                       value="no"
                       id="onceNo"
                     />
-                    <label class="form-check-label" for="onceNo"
-                      >Tidak, tetap bisa diunduh sampai waktu habis</label
-                    >
+                    <label class="form-check-label" for="onceNo">
+                      No, allow downloads until the time expires
+                    </label>
                   </div>
                 </div>
 
                 <button type="submit" class="btn btn-primary w-100">
-                  Kirim File
+                  Send File
                 </button>
               </form>
             </div>
           </div>
           <p class="text-center mt-3 text-secondary small">
-            File akan otomatis terhapus setelah diunduh atau waktu berakhir.
+            Files are automatically deleted after being downloaded or when the
+            time expires.
           </p>
         </div>
       </div>
