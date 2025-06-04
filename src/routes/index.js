@@ -1,12 +1,12 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const multer = require('multer');
-const path = require('path');
-const fs = require('fs');
-const controller = require('../controllers');
+const multer = require("multer");
+const path = require("path");
+const fs = require("fs");
+const controller = require("../controllers");
 
 // Ensure the uploads folder exists
-const uploadDir = path.resolve(__dirname, '../../uploads');
+const uploadDir = path.resolve(__dirname, "../../uploads");
 if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir, { recursive: true });
 }
@@ -17,7 +17,7 @@ const storage = multer.diskStorage({
     cb(null, uploadDir);
   },
   filename: (req, file, cb) => {
-    const uniqueName = Date.now() + '-' + file.originalname;
+    const uniqueName = Date.now() + "-" + file.originalname;
     cb(null, uniqueName);
   },
 });
@@ -29,14 +29,18 @@ const upload = multer({
 });
 
 // Routes
-router.get('/', (req, res) => {
-  res.render('index');
+router.get("/", (req, res) => {
+  res.render("index");
 });
-router.get('/upload', controller.showUploadForm);
-router.post('/upload', upload.single('file'), controller.uploadFile);
-router.get('/d/:token', controller.downloadFile);
-router.get('/disclaimer', (req, res) => {
-  res.render('disclaimer');
+
+router.get("/upload", controller.showUploadForm);
+router.post("/upload", upload.single("file"), controller.uploadFile);
+
+router.get("/d/:token", controller.downloadFile);
+router.post("/d/:token", controller.downloadFile);
+
+router.get("/disclaimer", (req, res) => {
+  res.render("disclaimer");
 });
 
 module.exports = router;

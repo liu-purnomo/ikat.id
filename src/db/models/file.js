@@ -1,5 +1,5 @@
-'use strict';
-const { Model } = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class File extends Model {
     /**
@@ -10,8 +10,8 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       File.hasMany(models.Download, {
-        foreignKey: 'fileId',
-        onDelete: 'CASCADE',
+        foreignKey: "fileId",
+        onDelete: "CASCADE",
       });
     }
   }
@@ -29,6 +29,7 @@ module.exports = (sequelize, DataTypes) => {
       original: DataTypes.STRING,
       note: DataTypes.TEXT,
       recipientEmail: DataTypes.STRING,
+      password: DataTypes.STRING, // Field baru untuk password
       expiresAt: DataTypes.DATE,
       downloaded: DataTypes.BOOLEAN,
       ip: DataTypes.STRING,
@@ -39,7 +40,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: 'File',
+      modelName: "File",
     }
   );
   return File;
