@@ -82,6 +82,18 @@
                     </span>
                   </div>
                 </div>
+                <% if (hasPassword) { %>
+                <hr class="my-3" />
+                <div class="text-center">
+                  <span class="badge bg-warning text-dark">
+                    <i class="bi bi-shield-lock-fill"></i> Password Protected
+                  </span>
+                  <br />
+                  <small class="text-secondary mt-1"
+                    >Recipients will need the password to download</small
+                  >
+                </div>
+                <% } %>
               </div>
 
               <!-- Share Options -->

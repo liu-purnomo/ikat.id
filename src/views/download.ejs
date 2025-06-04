@@ -105,6 +105,17 @@
                     <em class="text-light"><%= file.note %></em>
                   </div>
                 </div>
+                <% } %> <% if (file.hasPassword) { %>
+                <hr class="my-3 border-secondary" />
+                <div class="text-center">
+                  <span class="badge bg-warning text-dark">
+                    <i class="bi bi-shield-lock-fill"></i> Password Protected
+                  </span>
+                  <br />
+                  <small class="text-secondary mt-1"
+                    >This file is secured with a password</small
+                  >
+                </div>
                 <% } %>
               </div>
 
