@@ -75,18 +75,15 @@ See our [Disclaimer](https://ikat.id/disclaimer) for more information.
 
 ```
 
-3. Create a `.env` file:
+3. Create a `.env` file by copying from `.env.example`:
 
 ```env
 
-   DB_USERNAME=postgres
-   DB_PASSWORD=yourpassword
-   DB_DATABASE=ikat_digital
-   DB_HOST=localhost
-   DB_PORT=5432
-   BASE_URL=http://localhost:3000
+   cp .env.example .env
 
 ```
+
+Adjust the configuration accordingly.
 
 4. Create and migrate the database:
 
@@ -135,4 +132,3 @@ MIT License © 2025 — [Liu Purnomo](https://liupurnomo.com)
 * 📸 [Instagram](https://instagram.com/liupurnomo)
 * 💼 [LinkedIn](https://linkedin.com/in/liupurnomo)
 * 📺 [YouTube](https://youtube.com/@liupurnomo)
-
