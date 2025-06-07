@@ -2,6 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const { File, Download } = require('../db/models');
 const { v4: uuidv4 } = require('uuid');
+const QRCode = require('qrcode');
 
 exports.showUploadForm = (req, res) => {
   res.render('upload'); // form upload
@@ -13,17 +14,18 @@ exports.uploadFile = async (req, res) => {
     note,
     recipientEmail,
     deleteAfterDownload,
-    expiresIn, // e.g. '30m', '1h', '1d', '7d', '30d'
+    expiresIn,
   } = req.body;
 
   const expiresAt = new Date(Date.now() + parseExpiresIn(expiresIn));
   const token = uuidv4();
+  const downloadUrl = `${process.env.BASE_URL}/d/${token}`;
 
   try {
     const newFile = await File.create({
       id: uuidv4(),
       token,
-      code: Math.random().toString(36).substring(2, 6).toUpperCase(), // optional: short download code
+      code: Math.random().toString(36).substring(2, 6).toUpperCase(),
       filename: file.filename,
       original: file.originalname,
       note,
@@ -37,8 +39,12 @@ exports.uploadFile = async (req, res) => {
       lang: req.headers['accept-language'] || '',
     });
 
+    // Generate QR code as data URL
+    const qrCodeDataURL = await QRCode.toDataURL(downloadUrl);
+
     res.render('success', {
-      downloadUrl: `${process.env.BASE_URL}/d/${token}`,
+      downloadUrl,
+      qrCodeDataURL,
     });
   } catch (err) {
     console.error(err);
