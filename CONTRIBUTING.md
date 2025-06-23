@@ -1,9 +1,9 @@
 # 🤝 Contributing to Ikat Digital
 
-First off, thank you for taking the time to contribute! 🎉  
-We welcome contributions of all kinds — bug reports, feature suggestions, documentation improvements, or actual code contributions.
+Thank you for taking the time to contribute! 🎉  
+We welcome all kinds of contributions — bug reports, feature suggestions, documentation, and code improvements.
 
-This project is open source and transparent. Together, we can make file sharing safer and simpler for everyone.
+This is a community-driven open source project. Let’s make secure file sharing better for everyone.
 
 ---
 
@@ -15,91 +15,112 @@ GitHub: [https://github.com/liu-purnomo/ikat.id](https://github.com/liu-purnomo/
 
 ## 🧰 Local Development Setup
 
-1. Fork and clone this repo:
-   ```bash
-   git clone https://github.com/your-username/ikat.id.git
-   cd ikat.id
-   ```
+1. Fork and clone the repository:
 
-
+```bash
+git clone https://github.com/your-username/ikat.id.git
+cd ikat.id
+```
 
 2. Install dependencies:
 
-   ```bash
-   npm install
-    ```
+```bash
+npm install
+```
 
-3. Set up the environment:
+3. Setup environment variables:
 
-   - Copy `.env.example` to `.env`
-   - Fill in your PostgreSQL database details
+```bash
+cp .env.example .env
+```
 
-4. Set up the database:
+4. Configure `.env` file with your PostgreSQL and app settings.
 
-   ```bash
-   npx sequelize-cli db:create
-   npx sequelize-cli db:migrate
-   ```
+5. Set up the database:
 
-5. Run the server:
+```bash
+npx sequelize-cli db:create
+npx sequelize-cli db:migrate
+```
 
-   ```bash
-   npm run dev
-   ```
+6. Run the app:
 
----
+```bash
+npm run dev
+```
 
-## 📝 How to Contribute
-
-### ✅ Found a Bug?
-
-- Open an [issue](https://github.com/liu-purnomo/ikat.id/issues)
-- Include screenshots, logs, and clear steps to reproduce
-
-### 🌟 Want to Add a Feature?
-
-- First, open a **discussion** or **issue** to describe the idea
-- We’ll review and give feedback or suggest enhancements
-- Once confirmed, you can submit a PR (Pull Request)
-
-### 📚 Improving Docs?
-
-- Feel free to improve the `README.md`, `CHANGELOG.md`, or add tutorials
-- Grammar/spelling fixes are welcome too!
+App should run at [http://localhost:3000](http://localhost:3000)
 
 ---
 
-## 🔧 Coding Guidelines
+## 📝 Contribution Guidelines
 
-- Follow the existing code style (Prettier support coming soon)
-- Use consistent `camelCase` and clear naming
-- Keep controllers and routes clean and RESTful
-- Comment your code if it's non-trivial
+### 🐛 Bug Reports
+
+- Use the [Bug Report Template](../../issues/new?template=bug_report.md)
+- Include steps to reproduce and screenshots if possible
+
+### 💡 Feature Requests
+
+- Use the [Feature Request Template](../../issues/new?template=feature_request.md)
+- Describe the use case clearly
+
+### 🧪 Pull Requests
+
+- Use the [PR Template](../../pulls)
+- Keep changes focused and minimal
+- Test your changes manually
+
+### 📚 Documentation
+
+- Fix typos or grammar
+- Improve setup instructions or add new sections
 
 ---
 
-## 🧪 Testing
+## 💼 Code Style & Conventions
 
-Basic manual testing is fine for now:
+- Follow [CONVENTION.md](./CONVENTION.md)
+- Use `camelCase` for variables, `PascalCase` for models
+- Commit using Conventional Commits
 
-- Upload a file and verify download works
-- Try expired files and observe error handling
-- Verify auto-delete jobs run as expected
+---
 
-We welcome contributions that add automated testing!
+## 🧪 Testing (Manual for now)
+
+- Upload and download a file
+- Try expired links
+- Test password-protected links
+- Test auto-delete functionality
+
+---
+
+## 🔐 Security Issues
+
+Please report vulnerabilities privately to:
+
+📧 **[hi@liupurnomo.com](mailto:hi@liupurnomo.com)**
+
+Do **not** open public issues for security concerns.
+See [`SECURITY.md`](./SECURITY.md) for more.
+
+---
+
+## 🧭 Code of Conduct
+
+All contributors must follow our [Code of Conduct](./CODE_OF_CONDUCT.md).
+
+Be kind, respectful, and constructive 🙌
 
 ---
 
 ## 📜 License
 
-All contributions will be licensed under the [MIT License](LICENSE).
-By contributing, you agree that your code may be distributed under this license.
+By contributing, you agree your code is licensed under the [MIT License](./LICENSE)
 
 ---
 
-## 🗣 Community
-
-Feel free to follow or reach out via:
+## 🗣 Contact & Community
 
 - 🌐 [liupurnomo.com](https://liupurnomo.com)
 - 📘 [Facebook](https://facebook.com/leonsps)
@@ -108,5 +129,6 @@ Feel free to follow or reach out via:
 - 💼 [LinkedIn](https://linkedin.com/in/liupurnomo)
 - 📺 [YouTube](https://youtube.com/@liupurnomo)
 
-Thanks again for your support! 💙
-Let’s build Ikat Digital together!
+Thanks for your support! 💙
+
+Let’s build **Ikat Digital** together!

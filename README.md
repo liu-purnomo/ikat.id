@@ -1,134 +1,127 @@
 # 📁 Ikat Digital
 
-**Ikat Digital** is a fast, secure, and login-free file sharing service. Files are automatically deleted either after a single download or after a selected expiration period (from 30 minutes to 30 days). It’s free, private, and open source — built with transparency in mind.
+**Ikat Digital** adalah layanan file sharing cepat, aman, dan tanpa login. File akan **terhapus otomatis** setelah satu kali diunduh atau berdasarkan waktu kedaluwarsa yang dipilih (30 menit hingga 30 hari). Gratis, privat, dan 100% open source.
 
 🌐 https://ikat.id
 
 ---
 
-## 🚀 Features
+## 🚀 Fitur Unggulan
 
-- ✅ Upload files up to 50 GB
-- ✅ No login or registration required
-- ✅ Auto-delete after download or time-based expiry
-- ✅ Disk cleanup (metadata is retained for logs)
-- ✅ Completely free and ad-free
-- ✅ Clean dark UI using Bootstrap 5
-- ✅ Copyable shareable links
+- ✅ Unggah file hingga **50 GB**
+- ✅ Tanpa login, tanpa registrasi
+- ✅ Opsi penghapusan otomatis setelah **1 kali download**
+- ✅ Opsi penghapusan berdasarkan waktu: 30 menit hingga 30 hari
+- ✅ Dapat dikunci dengan **password**
+- ✅ **Link QR Code** untuk download
+- ✅ Metadata logging ringan (IP, user-agent, bahasa, referrer)
+- ✅ UI gelap yang bersih (Bootstrap 5)
+- ✅ Link dapat disalin & dibagikan langsung
 - ✅ SEO-friendly landing page
-- ✅ Fully open source and community transparent
+- ✅ Sepenuhnya open source & transparan
 
 ---
 
-## 🖼 Screenshots
+## 🖼 Cuplikan Layar
 
-> Upload page:
-![Upload Page](/public/upload.png)
+> Halaman unggah:
+> ![Upload Page](/public/upload.png)
 
-> Success page with copyable link:
-![Success Page](/public/success-upload.png)
-
----
-
-## 🛡 Security & Transparency
-
-This project is 100% open source and can be audited by anyone. We believe trust begins with transparency.
-
-- No persistent file storage
-- No user tracking or profiling
-- All files are automatically deleted as scheduled
-- Only basic metadata (e.g., IP, user-agent) is stored for minimal logging
-
-See our [Disclaimer](https://ikat.id/disclaimer) for more information.
+> Setelah berhasil:
+> ![Success Page](/public/success-upload.png)
 
 ---
 
-## 🧰 Tech Stack
+## 🔐 Keamanan & Privasi
 
-- **Express.js**
-- **EJS**
-- **Multer**
-- **Sequelize + PostgreSQL**
-- **Node-cron**
-- **Bootstrap 5**
-- **UUID & basic download logging**
+Kami percaya **privasi adalah hak**, bukan fitur berbayar. Karena itu, Ikat Digital:
+
+- Tidak menyimpan file secara permanen
+- Tidak melakukan pelacakan pengguna atau fingerprinting
+- File dihapus otomatis sesuai pengaturan user
+- Metadata terbatas disimpan hanya untuk log:
+  - IP address
+  - User-Agent
+  - Referrer dan bahasa
+
+Jika Anda mengaktifkan **password**, file hanya dapat diunduh dengan kata sandi tersebut.
+
+Baca [Disclaimer](https://ikat.id/disclaimer) untuk informasi lengkap.
 
 ---
 
-## ⚙️ Running Locally
+## 🧰 Teknologi
 
-1. Clone the repository:
+- ⚙️ **Express.js** + **EJS** (server dan templating)
+- 📦 **Multer** (file upload)
+- 🧮 **Sequelize** + **PostgreSQL** (ORM & database)
+- 🕐 **Node-cron** (hapus file otomatis)
+- 🧾 **UUID**, **QR Code**, dan logging dasar
+- 🎨 **Bootstrap 5** (UI frontend)
+
+---
+
+## ⚙️ Menjalankan Secara Lokal
+
+1. Clone repo ini:
 
 ```bash
-
-   git clone https://github.com/your-username/ikat-digital.git
-   cd ikat-digital
-
+git clone https://github.com/your-username/ikat-digital.git
+cd ikat-digital
 ```
-
 
 2. Install dependencies:
 
 ```bash
-
-   npm install
-
+npm install
 ```
 
-3. Create a `.env` file by copying from `.env.example`:
-
-```env
-
-   cp .env.example .env
-
-```
-
-Adjust the configuration accordingly.
-
-4. Create and migrate the database:
+3. Salin dan konfigurasi file `.env`:
 
 ```bash
-
-   npx sequelize-cli db:create
-   npx sequelize-cli db:migrate
-
+cp .env.example .env
 ```
 
-5. Run the app:
+4. Buat dan migrasikan database:
 
 ```bash
+npx sequelize-cli db:create
+npx sequelize-cli db:migrate
+```
 
-   npm run dev
+5. Jalankan aplikasi:
 
+```bash
+npm run dev
 ```
 
 ---
 
-## 🧩 Contributions Welcome
+## 🧩 Kontribusi
 
-We encourage contributions! You can help by:
+Kami membuka kontribusi untuk siapa pun:
 
-* Fixing bugs or writing tests
-* Improving UI/UX
-* Adding new features
-* Translating documentation
-* Improving security and performance
+- Perbaikan bug atau pengujian
+- Peningkatan UI/UX
+- Fitur tambahan (misal: statistik, preview file, dsb)
+- Dokumentasi atau terjemahan
+- Keamanan & performa
 
-Please open an issue or submit a pull request.
+Silakan open issue atau pull request!
 
 ---
 
-## 📜 License
+## 📜 Lisensi
 
 MIT License © 2025 — [Liu Purnomo](https://liupurnomo.com)
 
 ---
 
-## 🔗 Author & Community
+## 🔗 Kontak & Komunitas
 
-* 🌐 [liupurnomo.com](https://liupurnomo.com)
-* 📘 [Facebook](https://facebook.com/leonsps)
-* 🐦 [Twitter / X](https://x.com/liupurnomo)
-* 📸 [Instagram](https://instagram.com/liupurnomo)
-* 💼 [LinkedIn](https://linkedin.com/in/liupurnomo)
-* 📺 [YouTube](https://youtube.com/@liupurnomo)
+- 🌐 [liupurnomo.com](https://liupurnomo.com)
+- 📘 [Facebook](https://facebook.com/leonsps)
+- 🐦 [Twitter / X](https://x.com/liupurnomo)
+- 📸 [Instagram](https://instagram.com/liupurnomo)
+- 💼 [LinkedIn](https://linkedin.com/in/liupurnomo)
+- 📺 [YouTube](https://youtube.com/@liupurnomo)

@@ -1,13 +1,14 @@
 {
   "name": "ikat-digital",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "main": "src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/app.js --ignore uploads/",
     "db:reset": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate",
     "db:migrate": "npx sequelize-cli db:migrate",
-    "start": "node src/app.js"
+    "start": "node src/app.js",
+    "format": "prettier --write ."
   },
   "keywords": [],
   "author": "",
@@ -25,6 +26,7 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.10",
+    "prettier": "^3.6.0",
     "sequelize-cli": "^6.6.3"
   }
 }

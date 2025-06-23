@@ -1,7 +1,9 @@
-
 # 🧭 Ikat Digital – Code Conventions & Best Practices
 
-This document defines the **conventions and naming standards** used across the Ikat Digital project. Following this ensures consistency, readability, and maintainability.
+> 📘 This document complements [CONTRIBUTING.md](./CONTRIBUTING.md).  
+> It outlines the **code style, naming conventions, folder structure**, and **best practices** used across the Ikat Digital project.
+
+Please follow these standards to maintain code readability and consistency.
 
 ---
 
@@ -29,62 +31,59 @@ src/
 
 ## 📌 Naming Conventions
 
-### Variables (JS/Node)
-- `camelCase` for all variables and function names  
-- Constants use `UPPER_SNAKE_CASE`
+### JavaScript/Node Variables
+
+- `camelCase` for variables and function names
+- `UPPER_SNAKE_CASE` for constants
 
 ```js
 const fileToken = req.params.token;
 const MAX_FILE_SIZE = 50 * 1024 * 1024 * 1024; // 50GB
-````
-
----
+```
 
 ### Files & Folders
 
-* Use `kebab-case` for all file and folder names
-* Examples:
-
-  * `upload-controller.js`
-  * `clean-expired-files.js`
+- Use `kebab-case` for filenames and folders
+- Examples:
+  - `upload-controller.js`
+  - `clean-expired-files.js`
 
 ---
 
-### Database (Sequelize/PostgreSQL)
+## 🗃 Database (Sequelize / PostgreSQL)
 
-#### Tables
+### Tables
 
-* `PascalCase`, plural
-* Examples: `Files`, `Downloads`
+- Use `PascalCase`, plural
+- Example: `Files`, `Downloads`
 
-#### Columns
+### Columns
 
-* `camelCase`, descriptive
-* Example: `fileName`, `expiresAt`, `recipientEmail`
+- Use `camelCase`, descriptive
+- Example: `fileName`, `expiresAt`, `recipientEmail`
 
-#### Models
+### Models
 
-* `PascalCase`, singular
-* Example: `File`, `Download`
+- Use `PascalCase`, singular
+- Example: `File`, `Download`
 
-#### Relationships
+### Relationships
 
-* Use foreign keys with `Id` suffix
-* Example: `fileId`
+- Use foreign key naming like: `fileId`, `userId`
 
 ---
 
 ## 📄 EJS View Templates
 
-* Located in `src/views`
-* Use `kebab-case` filenames: `landing.ejs`, `upload-success.ejs`
-* Logic kept minimal; render data passed from controller only
+- Located in `src/views`
+- Use `kebab-case` filenames: `landing.ejs`, `upload-success.ejs`
+- Keep logic minimal — use controller to prepare data
 
 ---
 
 ## 📜 Git Commit Messages
 
-Follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) standard:
+Follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 
 ### Format:
 
@@ -94,43 +93,44 @@ Follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/
 
 ### Types:
 
-* `feat`: New feature
-* `fix`: Bug fix
-* `refactor`: Code restructuring without behavior change
-* `style`: Formatting (no code logic)
-* `docs`: Documentation only
-* `test`: Adding or modifying tests
-* `chore`: Tooling/config changes
+- `feat`: New feature
+- `fix`: Bug fix
+- `refactor`: Code restructure (no behavior change)
+- `style`: Formatting (no logic change)
+- `docs`: Documentation only
+- `test`: Adding/modifying tests
+- `chore`: Tooling, build, dependencies
 
 ### Examples:
 
 ```
-feat(upload): allow setting expiration by time
-fix(download): return 403 if file already downloaded
-docs(readme): add local setup instructions
+feat(upload): support password-protected files
+fix(download): prevent expired file access
+docs(readme): add project description
 ```
 
 ---
 
-## 🧪 Testing (future plan)
+## 🧪 Testing (Coming Soon)
 
-* Test files in `/test`, named like: `upload.test.js`
-* Use [Jest](https://jestjs.io/) (coming soon)
+- Place tests in `/test` folder
+- Filename format: `upload.test.js`
+- Testing tool: [Jest](https://jestjs.io/)
 
 ---
 
 ## 🌐 URL Structure
 
-* `/` – Landing page
-* `/upload` – Upload form
-* `/d/:token` – Download file by token
-* `/disclaimer` – Legal & usage notice
+- `/` – Landing page
+- `/upload` – Upload form
+- `/d/:token` – Download by token
+- `/disclaimer` – Legal info
 
 ---
 
 ## 📦 Environment Variables (`.env`)
 
-Use **UPPER\_SNAKE\_CASE** for all keys:
+Use `UPPER_SNAKE_CASE` for all keys:
 
 ```env
 DB_USERNAME=postgres
@@ -143,31 +143,15 @@ BASE_URL=https://ikat.id
 
 ---
 
-## 🧼 Cron & Cleanup
+## 🧼 Cron Jobs & Cleanup
 
-* Scheduled jobs placed in `src/jobs`
-* Follow file naming: `clean-expired-files.js`
-* Cron is configured via `node-cron` inside `app.js` or `jobs/index.js`
-
----
-
-## 🤝 Contribution Standards
-
-* Follow the [CONTRIBUTING.md](./CONTRIBUTING.md)
-* Keep code clean, readable, and DRY (Don't Repeat Yourself)
-* Leave helpful comments where necessary
-* Make PRs small and focused
-* Review others respectfully
+- Place scheduled jobs in `src/jobs`
+- Use naming: `clean-expired-files.js`
+- Trigger with `node-cron` via `app.js` or `jobs/index.js`
 
 ---
 
-## ✅ Linting & Formatting (planned)
+## ✅ Final Notes
 
-Coming soon: ESLint + Prettier config for auto formatting and catching issues early.
-
----
-
-## 🧠 Final Notes
-
-Consistent code is clean code.
+Consistency is clarity.
 Thanks for helping maintain code quality in **Ikat Digital** 💙
