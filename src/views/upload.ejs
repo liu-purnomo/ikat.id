@@ -32,8 +32,8 @@
     </style>
   </head>
   <body class="bg-dark text-light d-flex align-items-center min-vh-100">
-    <div class="container">
-      <div class="row justify-content-center mb-4">
+    <div class="container py-4">
+      <div class="row justify-content-center mb-4 pt-4">
         <div class="col-md-8 text-center">
           <a href="/" class="text-light text-decoration-none">
             <h1 class="fw-bold mb-2">Ikat Digital</h1>
@@ -213,47 +213,47 @@
       function validateSize(input) {
         const file = input.files[0];
         if (file && file.size > 50 * 1024 * 1024 * 1024) {
-          alert("The selected file exceeds the 50GB limit.");
-          input.value = "";
+          alert('The selected file exceeds the 50GB limit.');
+          input.value = '';
         }
       }
 
       function togglePassword() {
-        const container = document.getElementById("passwordContainer");
-        const checkbox = document.getElementById("enablePassword");
-        const passwordInput = document.getElementById("passwordInput");
+        const container = document.getElementById('passwordContainer');
+        const checkbox = document.getElementById('enablePassword');
+        const passwordInput = document.getElementById('passwordInput');
 
         if (checkbox.checked) {
-          container.style.display = "block";
+          container.style.display = 'block';
           passwordInput.required = true;
         } else {
-          container.style.display = "none";
+          container.style.display = 'none';
           passwordInput.required = false;
-          passwordInput.value = "";
-          document.getElementById("passwordStrength").innerHTML = "";
+          passwordInput.value = '';
+          document.getElementById('passwordStrength').innerHTML = '';
         }
       }
 
       function togglePasswordVisibility() {
-        const passwordInput = document.getElementById("passwordInput");
-        const toggleButton = document.getElementById("passwordToggle");
-        const icon = toggleButton.querySelector("i");
+        const passwordInput = document.getElementById('passwordInput');
+        const toggleButton = document.getElementById('passwordToggle');
+        const icon = toggleButton.querySelector('i');
 
-        if (passwordInput.type === "password") {
-          passwordInput.type = "text";
-          icon.className = "bi bi-eye-slash";
+        if (passwordInput.type === 'password') {
+          passwordInput.type = 'text';
+          icon.className = 'bi bi-eye-slash';
         } else {
-          passwordInput.type = "password";
-          icon.className = "bi bi-eye";
+          passwordInput.type = 'password';
+          icon.className = 'bi bi-eye';
         }
       }
 
       function checkPasswordStrength() {
-        const password = document.getElementById("passwordInput").value;
-        const strengthDiv = document.getElementById("passwordStrength");
+        const password = document.getElementById('passwordInput').value;
+        const strengthDiv = document.getElementById('passwordStrength');
 
         if (password.length === 0) {
-          strengthDiv.innerHTML = "";
+          strengthDiv.innerHTML = '';
           return;
         }
 
@@ -262,58 +262,58 @@
 
         // Length check
         if (password.length >= 8) strength++;
-        else feedback.push("at least 8 characters");
+        else feedback.push('at least 8 characters');
 
         // Character variety checks
         if (/[a-z]/.test(password)) strength++;
-        else feedback.push("lowercase letters");
+        else feedback.push('lowercase letters');
 
         if (/[A-Z]/.test(password)) strength++;
-        else feedback.push("uppercase letters");
+        else feedback.push('uppercase letters');
 
         if (/[0-9]/.test(password)) strength++;
-        else feedback.push("numbers");
+        else feedback.push('numbers');
 
         if (/[^A-Za-z0-9]/.test(password)) strength++;
-        else feedback.push("special characters");
+        else feedback.push('special characters');
 
-        let strengthText = "";
-        let strengthClass = "";
+        let strengthText = '';
+        let strengthClass = '';
 
         if (strength < 2) {
-          strengthText = "🔴 Weak password";
-          strengthClass = "strength-weak";
+          strengthText = '🔴 Weak password';
+          strengthClass = 'strength-weak';
         } else if (strength < 4) {
-          strengthText = "🟡 Medium password";
-          strengthClass = "strength-medium";
+          strengthText = '🟡 Medium password';
+          strengthClass = 'strength-medium';
         } else {
-          strengthText = "🟢 Strong password";
-          strengthClass = "strength-strong";
+          strengthText = '🟢 Strong password';
+          strengthClass = 'strength-strong';
         }
 
         if (feedback.length > 0 && strength < 4) {
-          strengthText += ` - Add: ${feedback.join(", ")}`;
+          strengthText += ` - Add: ${feedback.join(', ')}`;
         }
 
         strengthDiv.innerHTML = `<span class="${strengthClass}">${strengthText}</span>`;
       }
 
-      const form = document.getElementById("uploadForm");
-      const loading = document.getElementById("loading");
-      const submitBtn = document.getElementById("submitBtn");
+      const form = document.getElementById('uploadForm');
+      const loading = document.getElementById('loading');
+      const submitBtn = document.getElementById('submitBtn');
 
-      form.addEventListener("submit", (e) => {
+      form.addEventListener('submit', (e) => {
         const enablePassword =
-          document.getElementById("enablePassword").checked;
-        const passwordInput = document.getElementById("passwordInput");
+          document.getElementById('enablePassword').checked;
+        const passwordInput = document.getElementById('passwordInput');
 
-        if (enablePassword && passwordInput.value.trim() === "") {
+        if (enablePassword && passwordInput.value.trim() === '') {
           e.preventDefault();
-          alert("Please enter a password or disable password protection.");
+          alert('Please enter a password or disable password protection.');
           return;
         }
 
-        loading.style.display = "block";
+        loading.style.display = 'block';
         submitBtn.disabled = true;
       });
     </script>

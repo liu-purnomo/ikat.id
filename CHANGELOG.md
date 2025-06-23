@@ -5,6 +5,38 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.1.0] - 2025-06-23
+
+# 🔐 What's new in v2.1.0
+
+## Added
+
+* 🔑 **Password Protection**: Users can now optionally protect their uploaded files with a password. Downloaders must enter the correct password to access the file.
+* 📱 **QR Code Support**: Each upload generates a scannable QR code linking directly to the download page.
+* 📤 **Share Buttons**: New buttons for **WhatsApp**, **Email**, and **Telegram** make it easier to share file links.
+
+## Changed
+
+* 💾 **Database Schema**:
+
+  * Added `password` column to the `Files` table to support password-protected downloads.
+* 🧩 Refined download flow to handle password prompts, validation, and errors gracefully.
+* ✨ Improved UI/UX on upload and download pages to support new features and better user feedback.
+
+## 👥 Contributors
+
+* Special thanks to [@mdwisu](https://github.com/mdwisu) for proposing the idea of **password protection**, **QR code support**, and for contributing to the **UI/UX enhancements**.
+* Shout-out to [@findrakecil](https://github.com/findrakecil) for improving the **developer documentation**, making it easier to set up the project and copy the `.env.example` file correctly.
+
+## ⚠️ Developer Note
+
+> This update introduces a **new database column (`password`)** in the `Files` table.
+> Please remember to run the migration:
+
+```bash
+npm run db:migrate
+```
+
 ---
 
 ## [2.0.0] - 2025-06-04

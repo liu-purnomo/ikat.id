@@ -25,7 +25,7 @@ async function deleteExpiredFiles() {
         //   console.log(`⚠ File not found: ${file.filename}`);
       }
     } catch (err) {
-      console.error(`❌ Failed to delete ${file.filename}:`, err.message);
+      // console.error(`❌ Failed to delete ${file.filename}:`, err.message);
     }
   }
 }
